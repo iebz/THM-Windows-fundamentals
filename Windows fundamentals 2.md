@@ -73,3 +73,96 @@ Vous pouvez déplacer le curseur pour voir comment le paramètre modifiera les p
 Nous continuons avec les outils disponibles via le  panneau de configuration du système  .
 
 La gestion informatique (compmgmt)  comporte trois sections principales :  Outils système ,  Stockage et  Services et applications .
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/f70db181-b512-4c1b-a529-ea5449788f31)
+
+Outils système
+
+Commençons par le Planificateur de tâches . Selon Microsoft, avec Task Scheduler, nous pouvons créer et gérer des tâches courantes que notre ordinateur exécutera automatiquement aux heures que nous précisons.
+
+Une tâche peut exécuter une application, un script, etc., et les tâches peuvent être configurées pour s'exécuter à tout moment. Une tâche peut s'exécuter à la connexion ou à la déconnexion. Les tâches peuvent également être configurées pour s'exécuter selon un calendrier spécifique, par exemple toutes les cinq minutes.
+
+Pour créer une tâche de base, cliquez sur Create Basic Tasksous Actions (volet de droite).
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/2256b601-1f80-47b3-82c6-7292e157c6d8)
+
+Vient ensuite l’Observateur d’événements .
+
+L'Observateur d'événements nous permet de visualiser les événements qui se sont produits sur l'ordinateur. Ces enregistrements d'événements peuvent être considérés comme une piste d'audit permettant de comprendre l'activité du système informatique. Ces informations sont souvent utilisées pour diagnostiquer les problèmes et enquêter sur les actions exécutées sur le système. 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/7ba0de6c-6f98-496a-8f9d-83fd0bd374a2)
+
+L'Observateur d'événements comporte trois volets.
+
+1-Le volet de gauche fournit une arborescence hiérarchique des fournisseurs de journaux d'événements. (comme le montre l'image ci-dessus)
+
+2-Le volet du milieu affichera un aperçu général et un résumé des événements spécifiques à un fournisseur sélectionné.
+
+3-Le volet de droite est le volet Actions.
+
+Il existe cinq types d'événements pouvant être enregistrés. Vous trouverez ci-dessous un tableau de  docs.microsoft.com  fournissant une brève description de chacun.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/f848f778-a65b-46dc-b06c-9efc134f69af)
+
+Les journaux standard sont visibles sous  Journaux Windows . Vous trouverez ci-dessous un tableau de  docs.microsoft.com  fournissant une brève description de chacun.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/24f52290-3876-4668-9f6c-1ed065f08b9b)
+
+
+Pour plus d'informations sur l'Observateur d'événements et les journaux d'événements, veuillez vous référer à la salle des journaux d'événements Windows . 
+
+Les dossiers partagés sont l'endroit où vous verrez une liste complète des partages et des dossiers partagés auxquels d'autres peuvent se connecter. 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/7c5cc01d-2e37-478f-a155-612f649c2ecc)
+
+Dans l'image ci-dessus, sous Partages, se trouvent le partage par défaut de Windows, C$ et les partages d'administration à distance par défaut créés par Windows, tels que ADMIN$. 
+
+Comme pour tout objet Windows, vous pouvez cliquer avec le bouton droit sur un dossier pour afficher ses propriétés, telles que les autorisations (qui peut accéder à la ressource partagée). 
+
+Sous Sessions , vous verrez une liste des utilisateurs actuellement connectés aux partages. Dans cette VM , vous ne verrez personne connecté aux partages.
+
+Tous les dossiers et/ou fichiers auxquels accèdent les utilisateurs connectés seront répertoriés sous Open Files .
+
+La section Utilisateurs et groupes locaux que vous devriez connaître dans Windows Fundamentals 1 car il s'agit de lusrmgr.msc.
+
+Dans Performance , vous verrez un utilitaire appelé Performance Monitor ( perfmon).
+
+Perfmon est utilisé pour afficher les données de performances en temps réel ou à partir d'un fichier journal. Cet utilitaire est utile pour résoudre les problèmes de performances sur un système informatique, qu'il soit local ou distant. 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/591b1818-c806-47ff-9ef1-55e015faf785)
+
+Le Gestionnaire de périphériques nous permet de visualiser et de configurer le matériel, par exemple en désactivant tout matériel connecté à l'ordinateur.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/fbc29908-e448-4a75-9e59-26ff81b2e2c2)
+
+Stockage  
+
+Sous Stockage se trouve la sauvegarde et la gestion des disques de Windows Server . Nous examinerons uniquement la gestion des disques dans cette salle.
+
+Remarque : Étant donné que la machine virtuelle est un système d'exploitation Windows Server, il existe des utilitaires disponibles que vous ne verrez généralement pas dans Windows 10.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/bc1a7982-554a-4d2f-bf1c-002a78f88e3b)
+
+La gestion des disques est un utilitaire système sous Windows qui vous permet d'effectuer des tâches de stockage avancées.  Certaines tâches sont :
+
+-Configurer un nouveau lecteur
+
+-Étendre une partition
+
+-Réduire une partition
+
+-Attribuer ou modifier une lettre de lecteur (ex. E :) 
+
+Services et applications
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/29e2379d-1eba-41fd-9d62-f4f1b1e9bd31)
+
+Rappel de la tâche précédente ; un  service est un type spécial d'application qui s'exécute en arrière-plan. Ici, vous pouvez faire plus que simplement activer et désactiver un service, comme afficher les propriétés du service.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/d6d7891e-955a-440b-88ae-4a5549e703a2)
+
+WMI Control configure et contrôle le service Windows Management Instrumentation ( WMI ).
+
+Selon Wikipédia, « WMI permet aux langages de script (tels que VBScript ou Windows PowerShell) de gérer les ordinateurs personnels et les serveurs Microsoft Windows, à la fois localement et à distance. Microsoft fournit également une interface de ligne de commande à WMI appelée ligne de commande Windows Management Instrumentation (WMIC). . "
+
+Remarque : L'outil WMIC est obsolète dans Windows 10, version 21H1. Windows PowerShell remplace cet outil pour WMI. 
