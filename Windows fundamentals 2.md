@@ -166,3 +166,202 @@ WMI Control configure et contrôle le service Windows Management Instrumentation
 Selon Wikipédia, « WMI permet aux langages de script (tels que VBScript ou Windows PowerShell) de gérer les ordinateurs personnels et les serveurs Microsoft Windows, à la fois localement et à distance. Microsoft fournit également une interface de ligne de commande à WMI appelée ligne de commande Windows Management Instrumentation (WMIC). . "
 
 Remarque : L'outil WMIC est obsolète dans Windows 10, version 21H1. Windows PowerShell remplace cet outil pour WMI. 
+
+## System information
+
+Nous continuons avec les outils disponibles via le  panneau de configuration du système  .
+
+Qu'est-ce que l' outil Informations système ( msinfo32) ?
+
+Selon Microsoft, " Windows inclut un outil appelé Informations système Microsoft (Msinfo32.exe). Cet outil rassemble des informations sur votre ordinateur et affiche une vue complète de votre matériel, des composants système et de l'environnement logiciel, que vous pouvez utiliser pour diagnostiquer les problèmes informatiques. "
+
+Les informations du résumé du système sont divisées en trois sections :
+
+-Ressources matérielles
+
+-Composants
+
+-Environnement logiciel
+
+Le résumé du système affichera les spécifications techniques générales de l'ordinateur, telles que la marque et le modèle du processeur.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/41a13f34-1a7e-4fd3-819f-6ff6342cd6c2)
+
+Les informations affichées dans Ressources matérielles ne sont pas destinées à l'utilisateur d'ordinateur moyen. Si vous souhaitez en savoir plus sur cette section, reportez-vous à la page officielle de Microsoft .
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/1290913f-3eee-43c2-a1b1-01c55c216836)
+
+Sous Composants , vous pouvez voir des informations spécifiques sur les périphériques matériels installés sur l'ordinateur. Certaines sections n'affichent aucune information, mais d'autres le font, comme Display et Input .
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/78545ed5-b05c-43bb-aad1-45682280dc76)
+
+Dans la section Environnement logiciel , vous pouvez voir des informations sur les logiciels intégrés au système d'exploitation et les logiciels que vous avez installés. D'autres détails sont également visibles dans cette section, tels que les variables d'environnement et les connexions réseau . 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/54405d87-79a6-4000-b6b6-75a5e4e02a3a)
+
+Rappel de la salle Windows Fundamentals 1  (tâche du dossier Windows\System32) où  les variables d'environnement  ont été brièvement abordées. 
+
+Selon Microsoft , « Les variables d'environnement stockent des informations sur l'environnement du système d'exploitation. Ces informations incluent des détails tels que le chemin du système d'exploitation, le nombre de processeurs utilisés par le système d'exploitation et l'emplacement des dossiers temporaires.
+
+Les variables d'environnement stockent les données utilisées par le système d'exploitation et d'autres programmes. Par exemple, la variable d'environnement WINDIR contient l'emplacement du répertoire d'installation de Windows. Les programmes peuvent interroger la valeur de cette variable pour déterminer où se trouvent les fichiers du système d'exploitation Windows ".
+
+Cliquez sur Environment Variablespour voir les valeurs attribuées à la machine virtuelle.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/b71a68a3-37a8-4acb-9aac-7616270020d9)
+
+Une autre méthode pour afficher les variables d'environnement est 
+
+Control Panel > System and Security > System > Advanced system settings > Environment Variables
+
+OR 
+
+Settings > System > About > system info > Advanced system settings > Environment Variables .
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/a7f4c343-2b40-4976-9f16-482c2cc766fa)
+
+Le détour est terminé. Redirigeons notre attention msinfo32et reprenons là où nous nous sommes arrêtés.
+
+Tout en bas de cet utilitaire, il y a une barre de recherche. S'il vous plaît, essayez-le. Sélectionnez Composants et recherchez IP address.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/1bf4bd42-2f76-4672-bf64-f465f6191385)
+
+## Ressource monitor
+
+Nous continuons avec les outils disponibles via le  panneau de configuration du système  .
+
+Qu'est-ce que le Moniteur de ressources ( resmon) ?
+
+Selon Microsoft, " Resource Monitor affiche des informations par processus et globales sur l'utilisation du processeur , de la mémoire, du disque et du réseau, en plus de fournir des détails sur les processus qui utilisent des descripteurs et des modules de fichiers individuels. Le filtrage avancé permet aux utilisateurs d'isoler les données liées à un ou plusieurs processus (applications ou services), démarrer, arrêter, mettre en pause et reprendre les services et fermer les applications qui ne répondent pas à partir de l'interface utilisateur. Il comprend également une fonctionnalité d'analyse de processus qui peut aider à identifier les processus bloqués et les conflits de verrouillage de fichiers afin que l'utilisateur peut tenter de résoudre le conflit au lieu de fermer une application et potentiellement de perdre des données. "
+
+Comme certains des autres outils mentionnés dans cette salle, cet utilitaire s'adresse principalement aux utilisateurs avancés qui doivent effectuer un dépannage avancé sur le système informatique.
+
+Dans l'onglet Présentation, Resmon comporte quatre sections :
+
+-CPU
+
+-Disque
+
+-Réseau
+
+-Mémoire
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/3238a65c-7314-4a64-9324-8864a0cc6882)
+
+Les quatre mêmes sections ont des onglets correspondants en haut. Voir ci-dessous.
+
+CPU
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/33a62993-8b42-43b3-8753-454980ef0cc8)
+
+Mémoire
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/9190061f-d329-48ce-b2c6-9be1a354e7c4)
+
+Disque
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/c4ab0fa2-09a0-4683-83c0-c70b28eacdbe)
+
+
+Réseau
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/c7cabe01-befa-45e2-b300-8f7f955989f3)
+
+
+Bien qu'il ne soit capturé dans aucune des images ci-dessus, Resource Monitor comporte un volet à l'extrême droite. Ce volet affiche une vue graphique en temps réel pour chaque section. 
+
+Remarque : Les informations affichées dans Resource Monitor seront différentes pour vous par rapport aux images ci-dessus.
+
+## CMD
+
+Nous continuons avec les outils disponibles via le  panneau de configuration du système  .
+
+L'invite de commande ( cmd) peut sembler intimidante au début, mais ce n'est vraiment pas si grave une fois que vous avez compris comment interagir avec elle. 
+
+Dans les premiers systèmes d'exploitation, la ligne de commande était le seul moyen d'interagir avec le système d'exploitation.
+
+Lorsque l' interface graphique (interface utilisateur graphique) a été introduite, elle permettait aux utilisateurs d'effectuer des tâches complexes en quelques clics sur un bouton au lieu de saisir des commandes dans l'invite de commande. 
+
+Même si l' interface graphique constitue le principal moyen d'interagir avec le système d'exploitation, un utilisateur d'ordinateur peut toujours interagir via l'invite de commande. 
+
+Dans cette tâche, nous ne couvrirons que quelques commandes qu'un utilisateur d'ordinateur peut exécuter dans l'invite de commande pour obtenir des informations sur le système informatique.
+
+Commençons par quelques commandes simples, telles que hostnameet whoami.
+
+La commande hostname affichera le nom de l'ordinateur.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/8f01ef23-258d-41e1-a1ba-705f9f96c8e5)
+
+La commande whoami affichera le nom de l'utilisateur connecté.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/c40660d9-f84a-4e29-8325-1b2b7d840964)
+
+Examinons ensuite quelques commandes utiles lors du dépannage.
+
+Une commande souvent utilisée est ipconfig. Cette commande affichera les paramètres d'adresse réseau de l'ordinateur.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/7bb39fcc-6ff9-4e64-8b76-6be82c13c14e)
+
+Chaque commande aura un manuel d'aide pour expliquer la syntaxe attendue pour exécuter correctement la commande, ainsi que tous les paramètres supplémentaires pouvant être ajoutés à la commande pour étendre son exécution.
+
+Une commande pour récupérer le manuel d'aide d'une commande est  /?.
+
+Par exemple, pour consulter le manuel d'aide de ipconfig , vous pouvez utiliser la commande suivante :ipconfig /?
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/6f1ffc59-12ec-422e-8e59-c223664b650d)
+
+Remarque : Pour effacer l'écran d'invite de commande, la commande est cls. 
+
+La commande suivante est netstat. Selon le manuel d'aide, cette commande affichera les statistiques du protocole et les connexions réseau TCP/IP actuelles. 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/7ae9fe4a-2f51-4403-9563-2122a40dc004)
+
+Dans l'image ci-dessus, la ligne dans la case rouge nous montre un exemple de syntaxe pour la commande. 
+
+La structure nous indique que la commande netstat peut être exécutée seule ou avec des paramètres tels que -a,  -b,  -e, etc. 
+
+Lorsque l'un des paramètres est ajouté à la commande racine, netstat dans ce cas, la sortie change. Jouez avec quelques-uns pour voir par vous-même. 
+
+La netcommande est principalement utilisée pour gérer les ressources réseau. Cette commande prend en charge les sous-commandes.
+
+Si vous tapez net sans sous-commande, la sortie affichera la syntaxe de la commande racine montrant quelques-unes des sous-commandes que vous pouvez utiliser.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/b8abdf71-cb37-4c89-ba94-cfdbff005e04)
+
+Pour la commande net, afficher le manuel d’aide /?ne fonctionnera pas. Dans ce cas, vous devez utiliser une syntaxe différente, à savoir net help.
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/02761d13-7e96-4a52-b08d-671a8f39d441)
+
+Donc, si vous souhaitez voir les informations d'aide pour net user , la commande est net help user. 
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/36a2639a-8c63-4ffb-9f06-689f13bfc8b6)
+
+Vous pouvez utiliser la même commande pour afficher les informations d'aide pour d'autres sous-commandes net utiles , telles que localgroup , use , share et session . 
+
+Reportez-vous au lien suivant pour voir une liste complète des commandes que vous pouvez exécuter dans l'invite de commande ici . 
+
+## Registry Editor
+
+
+Nous continuons avec les outils disponibles via le  panneau de configuration du système  .
+
+Le registre Windows (par Microsoft) est une base de données hiérarchique centrale utilisée pour stocker les informations nécessaires à la configuration du système pour un ou plusieurs utilisateurs, applications et périphériques matériels.
+
+Le registre contient des informations auxquelles Windows fait continuellement référence pendant le fonctionnement, telles que :
+
+-Profils pour chaque utilisateur
+
+-Applications installées sur l'ordinateur et types de documents que chacune peut créer
+
+-Paramètres de la feuille de propriétés pour les dossiers et les icônes d'application
+
+-Quel matériel existe sur le système
+
+-Les ports qui sont utilisés.
+
+Attention : Le registre est destiné aux utilisateurs d'ordinateurs avancés. Apporter des modifications au registre peut affecter le fonctionnement normal de l'ordinateur. 
+
+Il existe différentes manières d'afficher/modifier le registre. Une solution consiste à utiliser l' éditeur de registre ( regedit).
+
+![image](https://github.com/iebz/THM-Windows-fundamentals/assets/158310804/a51e1882-2c07-4e33-9fb9-2e2db3f88390)
+
+Reportez-vous à la documentation Microsoft suivante ici pour en savoir plus sur le registre Windows. 
